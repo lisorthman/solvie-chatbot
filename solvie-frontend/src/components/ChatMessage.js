@@ -19,6 +19,7 @@ export default function ChatMessage({ message }) {
           />
         </div>
       )}
+
       <div
         style={{
           backgroundColor: isUser ? "#007bff" : "#e5e5ea",
@@ -41,15 +42,6 @@ export default function ChatMessage({ message }) {
           {message.timestamp}
         </div>
       </div>
-      {isUser && (
-        <div style={{ marginLeft: "8px" }}>
-          <img
-            src="https://i.imgur.com/8Km9tLL.png" // User avatar
-            alt="User"
-            style={{ width: "32px", height: "32px", borderRadius: "50%" }}
-          />
-        </div>
-      )}
     </div>
   );
 }
