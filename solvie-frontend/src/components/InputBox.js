@@ -5,43 +5,21 @@ export default function InputBox({ onSend }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (text.trim() !== "") {
-      onSend(text.trim());
+    if (text.trim()) {
+      onSend(text);
       setText("");
     }
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      style={{ display: "flex", gap: "10px", marginTop: "10px" }}
-    >
+    <form className="input-box" onSubmit={handleSubmit}>
       <input
         type="text"
+        placeholder="Type your message..."
         value={text}
         onChange={(e) => setText(e.target.value)}
-        placeholder="Type your message..."
-        style={{
-          flex: 1,
-          padding: "10px 15px",
-          borderRadius: "20px",
-          border: "1px solid #ccc",
-          outline: "none",
-        }}
       />
-      <button
-        type="submit"
-        style={{
-          padding: "10px 20px",
-          borderRadius: "20px",
-          border: "none",
-          backgroundColor: "#007bff",
-          color: "white",
-          cursor: "pointer",
-        }}
-      >
-        Send
-      </button>
+      <button type="submit">➤</button>
     </form>
   );
 }

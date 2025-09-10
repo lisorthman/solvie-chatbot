@@ -9,7 +9,7 @@ function App() {
 
   const handleSend = async (text) => {
     if (!text) return;
-    const timestamp = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    const timestamp = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
 
     // Add user message
     setMessages((prev) => [...prev, { role: "user", text, timestamp }]);
@@ -17,20 +17,28 @@ function App() {
 
     try {
       const answer = await sendQuestion(text);
-      const aiTimestamp = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      const aiTimestamp = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
 
       setMessages((prev) => [...prev, { role: "ai", text: answer, timestamp: aiTimestamp }]);
     } catch (error) {
-      setMessages((prev) => [...prev, { role: "ai", text: "❌ Error contacting server.", timestamp }]);
+      setMessages((prev) => [
+        ...prev,
+        { role: "ai", text: "❌ Error contacting server.", timestamp },
+      ]);
     } finally {
       setIsTyping(false);
     }
   };
 
   return (
-    <div style={{ maxWidth: "600px", margin: "20px auto", fontFamily: "Arial, sans-serif" }}>
-      <h2 style={{ textAlign: "center" }}>Solvie Chatbot</h2>
+    <div className="chat-app">
+      {/* Header */}
+      <header className="chat-header">💬 Solvie Chatbot</header>
+
+      {/* Chat Window */}
       <ChatWindow messages={messages} isTyping={isTyping} />
+
+      {/* Input */}
       <InputBox onSend={handleSend} />
     </div>
   );
