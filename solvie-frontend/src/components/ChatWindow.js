@@ -1,5 +1,14 @@
-// src/components/ChatWindow.js
+import { useEffect, useRef } from "react";
+import ChatMessage from "./ChatMessage";
+
 export default function ChatWindow({ messages }) {
+  const chatEndRef = useRef(null);
+
+  // Scroll to bottom when new message arrives
+  useEffect(() => {
+    chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
+
   return (
     <div
       style={{
@@ -11,25 +20,12 @@ export default function ChatWindow({ messages }) {
         backgroundColor: "#f9f9f9",
         display: "flex",
         flexDirection: "column",
-        gap: "10px",
       }}
     >
       {messages.map((msg, idx) => (
-        <div
-          key={idx}
-          style={{
-            alignSelf: msg.role === "user" ? "flex-end" : "flex-start",
-            backgroundColor: msg.role === "user" ? "#007bff" : "#e5e5ea",
-            color: msg.role === "user" ? "white" : "black",
-            padding: "10px 15px",
-            borderRadius: "20px",
-            maxWidth: "80%",
-            whiteSpace: "pre-line", // preserves line breaks
-          }}
-        >
-          {msg.text}
-        </div>
+        <ChatMessage key={idx} message={msg} />
       ))}
+      <div ref={chatEndRef} />
     </div>
   );
 }
