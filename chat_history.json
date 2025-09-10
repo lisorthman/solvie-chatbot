@@ -10,5 +10,13 @@
   "User: is your company where is located",
   "AI: I don't know the exact location of our company. However, you can find the contact information, including the email address \"support@company.com\", on our website and other official documents.",
   "User: hello",
-  "AI: Hello. How can I assist you today?"
+  "AI: Hello. How can I assist you today?",
+  "User: hi",
+  "AI: Hello. How can I assist you today?",
+  "User: what is your company name",
+  "AI: Our company name is mentioned in the contact information section: Primary Support Channels. Our company name is not explicitly stated in the provided documents, but it's referenced in the phone number \"1-800-COMPANY\".",
+  "User: is we can replace the order",
+  "AI: You're referring to replacing an order. \n\nTo check if you can replace an order, follow these steps:\n\n* Look for your order ID and the reason you want to replace the order.\n* Check the Replacement/Refund Policy section in the documents. \n* If your order is within the 24-hour cancellation window, you can cancel the order and then place a new one. \n* If your order is past the cancellation window, you can report a defect and follow the process in the Reporting Defects section.\n\nIf you have further questions, please provide more details about your order and the reason for replacement.",
+  "User: or chnage the adderss of shipping",
+  "AI: To change the shipping address, follow these steps:\n\n* Log into your account and go to your order history.\n* Find the order you want to update and click on it.\n* Look for the option to edit or update the shipping address.\n* Enter the new shipping address and save the changes.\n* If the order has already shipped, you may need to contact our customer support team to report the issue and inquire about possible alternatives.\n\nIf you have further questions or issues, please provide more details about your order and the reason for the address change."
 ]
