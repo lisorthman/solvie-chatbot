@@ -14,14 +14,8 @@ export default function InputBox({ onSend }) {
   return (
     <form
       onSubmit={handleSubmit}
-      style={{
-        display: "flex",
-        gap: "10px",
-        marginTop: "15px",
-        paddingTop: "10px",
-      }}
+      style={{ display: "flex", gap: "10px", marginTop: "10px" }}
     >
-      {/* Glass-style input */}
       <input
         type="text"
         value={text}
@@ -29,33 +23,22 @@ export default function InputBox({ onSend }) {
         placeholder="Type your message..."
         style={{
           flex: 1,
-          padding: "12px 18px",
-          borderRadius: "25px",
-          border: "none",
+          padding: "10px 15px",
+          borderRadius: "20px",
+          border: "1px solid #ccc",
           outline: "none",
-          background: "rgba(255,255,255,0.2)",
-          backdropFilter: "blur(10px)",
-          color: "white",
-          fontSize: "16px",
         }}
       />
-
-      {/* Gradient send button */}
       <button
         type="submit"
         style={{
-          padding: "12px 20px",
-          borderRadius: "25px",
+          padding: "10px 20px",
+          borderRadius: "20px",
           border: "none",
-          background: "linear-gradient(135deg, #00c6ff, #0072ff)",
-
+          backgroundColor: "#007bff",
           color: "white",
-          fontWeight: "bold",
           cursor: "pointer",
-          transition: "transform 0.2s",
         }}
-        onMouseDown={(e) => (e.currentTarget.style.transform = "scale(0.95)")}
-        onMouseUp={(e) => (e.currentTarget.style.transform = "scale(1)")}
       >
         Send
       </button>

@@ -7,69 +7,46 @@ export default function ChatMessage({ message }) {
       style={{
         display: "flex",
         justifyContent: isUser ? "flex-end" : "flex-start",
-        marginBottom: "10px",
-        alignItems: "flex-end",
+        marginBottom: "8px",
       }}
     >
-      {/* AI Avatar */}
       {!isUser && (
-        <div style={{ marginRight: "10px" }}>
+        <div style={{ marginRight: "8px" }}>
           <img
             src="https://i.imgur.com/6VBx3io.png"
             alt="AI"
-            style={{
-              width: "36px",
-              height: "36px",
-              borderRadius: "50%",
-              boxShadow: "0 0 5px rgba(0,0,0,0.2)",
-            }}
+            style={{ width: "32px", height: "32px", borderRadius: "50%" }}
           />
         </div>
       )}
-
-      {/* Chat Bubble */}
       <div
         style={{
-          background: isUser
-            ? "linear-gradient(135deg, #6a11cb, #2575fc)"
-            : "rgba(255, 255, 255, 0.85)",
+          backgroundColor: isUser ? "#007bff" : "#e5e5ea",
           color: isUser ? "white" : "black",
-          padding: "12px 18px",
-          borderRadius: "25px",
-          maxWidth: "75%",
+          padding: "10px 15px",
+          borderRadius: "20px",
+          maxWidth: "70%",
           whiteSpace: "pre-line",
-          boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
-          animation: "fadeIn 0.4s ease forwards",
-          wordBreak: "break-word",
         }}
       >
         {message.text}
-
-        {/* Timestamp */}
         <div
           style={{
             fontSize: "10px",
             textAlign: "right",
-            marginTop: "6px",
+            marginTop: "5px",
             opacity: 0.6,
           }}
         >
           {message.timestamp}
         </div>
       </div>
-
-      {/* User Avatar */}
       {isUser && (
-        <div style={{ marginLeft: "10px" }}>
+        <div style={{ marginLeft: "8px" }}>
           <img
             src="https://i.imgur.com/8Km9tLL.png"
             alt="User"
-            style={{
-              width: "36px",
-              height: "36px",
-              borderRadius: "50%",
-              boxShadow: "0 0 5px rgba(0,0,0,0.2)",
-            }}
+            style={{ width: "32px", height: "32px", borderRadius: "50%" }}
           />
         </div>
       )}
