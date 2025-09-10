@@ -7,24 +7,27 @@ function App() {
   const [messages, setMessages] = useState([]);
 
   const handleSend = async (text) => {
-    const timestamp = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  if (!text) return;
 
-    // Add user message
-    setMessages((prev) => [...prev, { role: "user", text, timestamp }]);
+  setMessages((prev) => [...prev, { role: "user", text }]);
 
-    try {
-      const answer = await sendQuestion(text);
-      const aiTimestamp = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  try {
+    const answer = await sendQuestion(text);
 
-      setMessages((prev) => [...prev, { role: "ai", text: answer, timestamp: aiTimestamp }]);
-    } catch (error) {
-      setMessages((prev) => [...prev, { role: "ai", text: "❌ Error contacting server.", timestamp }]);
-    }
-  };
+    // Preserve line breaks and bullet points
+    const formattedAnswer = answer.replace(/\n/g, "\n");
+
+    setMessages((prev) => [...prev, { role: "ai", text: formattedAnswer }]);
+  } catch (error) {
+    console.error(error);
+    setMessages((prev) => [...prev, { role: "ai", text: "❌ Error contacting server." }]);
+  }
+};
+
 
   return (
     <div style={{ maxWidth: "600px", margin: "20px auto", fontFamily: "Arial, sans-serif" }}>
-      <h2 style={{ textAlign: "center" }}>Solvie Chatbot</h2>
+      <h2>Solvie Chatbot</h2>
       <ChatWindow messages={messages} />
       <InputBox onSend={handleSend} />
     </div>
