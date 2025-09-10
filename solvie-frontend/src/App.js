@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './App.css'; 
 import ChatWindow from "./components/ChatWindow";
 import InputBox from "./components/InputBox";
 import { sendQuestion } from "./services/api";
