@@ -12,14 +12,15 @@ export default function ChatWindow({ messages, isTyping }) {
   return (
     <div
       style={{
-        height: "400px",
+        flex: 1,
         overflowY: "auto",
-        border: "1px solid #ccc",
-        borderRadius: "8px",
-        padding: "10px",
-        backgroundColor: "#f9f9f9",
+        padding: "15px",
+        background: "rgba(255, 255, 255, 0.15)",
+        backdropFilter: "blur(15px)",
+        borderRadius: "20px",
         display: "flex",
         flexDirection: "column",
+        gap: "10px",
       }}
     >
       {messages.map((msg, idx) => (
@@ -28,16 +29,36 @@ export default function ChatWindow({ messages, isTyping }) {
 
       {/* Typing indicator */}
       {isTyping && (
-        <div style={{ display: "flex", alignItems: "center", marginBottom: "8px" }}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            marginBottom: "8px",
+          }}
+        >
+          {/* AI avatar */}
           <img
             src="https://i.imgur.com/6VBx3io.png"
             alt="AI"
-            style={{ width: "32px", height: "32px", borderRadius: "50%", marginRight: "8px" }}
+            style={{
+              width: "36px",
+              height: "36px",
+              borderRadius: "50%",
+              marginRight: "10px",
+              boxShadow: "0 0 5px rgba(0,0,0,0.2)",
+            }}
           />
+
+          {/* Glass bubble typing */}
           <div
             style={{
               display: "flex",
-              gap: "4px",
+              gap: "5px",
+              padding: "8px 12px",
+              borderRadius: "20px",
+              background: "rgba(255,255,255,0.25)",
+              backdropFilter: "blur(10px)",
+              alignItems: "center",
             }}
           >
             <div className="dot" />
