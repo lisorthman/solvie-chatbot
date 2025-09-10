@@ -1,0 +1,14 @@
+[
+  "User: hi",
+  "AI: Hello. I'm here to help with any questions or concerns you may have. What can I assist you with today?",
+  "User: how can i get refunds",
+  "AI: To get a refund, follow these steps:\n\n* Log in to your account and go to the \"Order History\" section.\n* Select the order containing the item you want to return.\n* Initiate a return from this section.\n* Print the provided return label.\n* Pack the item securely and ship it back.\n* A refund will be issued to your original payment method within 7 business days after we receive and inspect the item.\n\nNote: If the return is due to our error, we will cover the return shipping costs.",
+  "User: it taked long time ?",
+  "AI: It's understandable to be concerned about the processing time for refunds. \n\nHere are the typical processing times for different situations:\n\n* Refund for a return (not due to our error): 7 business days\n* Replacement or refund for a lost package: 10 business days after investigation confirmation\n* Replacement or refund for a damaged item: 7 business days\n* Replacement or refund for an address change that was not guaranteed: depends on the situation, but not guaranteed",
+  "User: thank you",
+  "AI: You're welcome. Is there anything else I can assist you with today?",
+  "User: is your company where is located",
+  "AI: I don't know the exact location of our company. However, you can find the contact information, including the email address \"support@company.com\", on our website and other official documents.",
+  "User: hello",
+  "AI: Hello. How can I assist you today?"
+]
