@@ -1,2 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+*.sqlite3
+
+# Virtual environment
+venv/
+
+# macOS
+.DS_Store
+
+# Environment variables
 .env
+
+# Local chat history (optional)
 chat_history.json
