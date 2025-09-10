@@ -1,4 +1,3 @@
-// src/components/InputBox.js
 import { useState } from "react";
 
 export default function InputBox({ onSend }) {
@@ -15,11 +14,7 @@ export default function InputBox({ onSend }) {
   return (
     <form
       onSubmit={handleSubmit}
-      style={{
-        display: "flex",
-        marginTop: "10px",
-        gap: "10px",
-      }}
+      style={{ display: "flex", gap: "10px", marginTop: "10px" }}
     >
       <input
         type="text"
@@ -28,7 +23,7 @@ export default function InputBox({ onSend }) {
         placeholder="Type your message..."
         style={{
           flex: 1,
-          padding: "10px",
+          padding: "10px 15px",
           borderRadius: "20px",
           border: "1px solid #ccc",
           outline: "none",
