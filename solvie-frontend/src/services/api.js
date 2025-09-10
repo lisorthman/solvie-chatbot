@@ -1,10 +1,11 @@
-export async function sendQuestion(userInput) {
-  const response = await fetch("http://127.0.0.1:8000/chat", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ user_input: userInput }),
-  });
+import axios from "axios";
 
-  const data = await response.json();
-  return data.response;
+export async function sendQuestion(question) {
+  try {
+    const response = await axios.post("http://localhost:8000/api/chat", { question });
+    return response.data.answer; // response from backend
+  } catch (error) {
+    console.error("Error sending question:", error);
+    return "❌ Sorry, there was an error processing your request.";
+  }
 }
